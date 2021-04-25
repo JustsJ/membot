@@ -5,5 +5,5 @@
         "random": "cpp",
         "optional": "cpp"
     },
-    "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve"
+    "C_Cpp.errorSquiggles": "Disabled"
 }
