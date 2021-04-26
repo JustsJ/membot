@@ -67,7 +67,7 @@ ChatBot::ChatBot(ChatBot &&chatbot){
     chatbot.SetChatLogicHandle(nullptr);
     chatbot._image = nullptr;
 }
-ChatBot &ChatBot::operator=(ChatBot &chatbot){
+ChatBot& ChatBot::operator=(ChatBot &chatbot){
     std::cout<<"ChatBot Copy Assignment"<<std::endl;
 
     if (this == &chatbot){
@@ -82,7 +82,8 @@ ChatBot &ChatBot::operator=(ChatBot &chatbot){
     return *this;
 }
 
-ChatBot &ChatBot::operator=(ChatBot &&chatbot){
+ChatBot& ChatBot::operator=(ChatBot &&chatbot){
+
     std::cout<<"ChatBot Move Assignment"<<std::endl;
 
     if (this == &chatbot){
