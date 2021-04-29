@@ -62,10 +62,12 @@ ChatBot::ChatBot(ChatBot &&chatbot){
     _currentNode = chatbot._currentNode;
     _chatLogic = chatbot._chatLogic;
 
-    chatbot.SetCurrentNode(nullptr);
-    chatbot.SetRootNode(nullptr);
-    chatbot.SetChatLogicHandle(nullptr);
-    chatbot._image = nullptr;
+    _chatLogic->SetChatbotHandle(this);
+
+    chatbot._currentNode = nullptr;
+    chatbot._rootNode = nullptr;
+    chatbot._chatLogic = nullptr;
+    chatbot._image = NULL;
 }
 ChatBot& ChatBot::operator=(ChatBot &chatbot){
     std::cout<<"ChatBot Copy Assignment"<<std::endl;
@@ -90,17 +92,19 @@ ChatBot& ChatBot::operator=(ChatBot &&chatbot){
         return *this;
     }
 
-    delete _image;
+    if(_image != NULL) delete _image;
 
     _image = chatbot._image;
     _rootNode = chatbot._rootNode;
     _currentNode = chatbot._currentNode;
     _chatLogic = chatbot._chatLogic;
 
-    chatbot.SetCurrentNode(nullptr);
-    chatbot.SetRootNode(nullptr);
-    chatbot.SetChatLogicHandle(nullptr);
-    chatbot._image = nullptr;
+    _chatLogic->SetChatbotHandle(this);
+
+    chatbot._currentNode = nullptr;
+    chatbot._rootNode = nullptr;
+    chatbot._chatLogic = nullptr;
+    chatbot._image = NULL;
 
     return *this;
 }; 
