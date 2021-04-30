@@ -205,15 +205,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
         }
     }
 
-
-    //testing chatbots rule of 5 
-    //ChatBot test = ChatBot(*_chatBot);
-    //test = *_chatBot;
-    //ChatBot *test2;
-    //test2 = new ChatBot();
-    //ChatBot *test3 = new ChatBot();
-    //test3 = std::move(test2);
-
     ChatBot chatbot("../images/chatbot.png");
     chatbot.SetChatLogicHandle(this);
     chatbot.SetRootNode(rootNode);
